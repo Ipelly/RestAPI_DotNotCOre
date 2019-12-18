@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'EdApp.API' ">
+    <StartAction>Project</StartAction>
+    <LaunchUrl>api/values</LaunchUrl>
+    <ApplicationURL>https://localhost:5001;http://localhost:5000</ApplicationURL>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Author.cs" />
+    <Compile Remove="Entities\Course.cs" />
+    <Compile Remove="Models\CourseDto.cs" />
+    <Compile Remove="Models\AuthorForCreationDto.cs" />
+    <Compile Remove="Models\CourseForCreationDto.cs" />
+    <Compile Remove="Profiles\CoursesProfile.cs" />
+    <Compile Remove="Services\IEdAppRepository %28copy%29.cs" />
+    <Compile Remove="Helpers\ArrayModelBinder.cs" />
+    <Compile Remove="Helpers\DateTimeOffsetExtensions.cs" />
+    <Compile Remove="Models\AuctionDto.cs" />
+    <Compile Remove="Models\AuctionDto %28copy%29.cs" />
+    <Compile Remove="Profiles\AuthorsProfile.cs" />
+    <Compile Remove="ResourceParameters\UsersResourceParameters.cs" />
+    <Compile Remove="Profiles\AuctionProfile.cs" />
+    <Compile Remove="Models\AuctionDtoForCreate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Migrations\EdAppContextModelSnapshot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitTest\" />
+  </ItemGroup>
+</Project>
